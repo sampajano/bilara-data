@@ -1,4 +1,4 @@
-name: Push File
+name: Push all files to sc-data
 
 on:
   push:
@@ -9,9 +9,6 @@ jobs:
   copy-file:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
     - name: Pushes files to sc_data repo
       uses: andstor/copycat-action@v3
       with:
