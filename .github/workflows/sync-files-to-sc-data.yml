@@ -15,9 +15,10 @@ jobs:
         personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         src_branch: fix-sync-failed
         src_path: /.
-        dst_path: /sc_bilara_data/
-        clean: true
+        exclude: '.github/workflows'
         dst_owner: suttacentral
         dst_repo_name: sc-data
+        dst_path: /sc_bilara_data/
         dst_branch: fix-sync-failed
+        clean: true
         commit_message: '[GHA] Update the bilara_data files.'
