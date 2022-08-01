@@ -15,7 +15,7 @@ jobs:
     - name: Pushes files to sc_data repo
       uses: andstor/copycat-action@v3
       with:
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         src_branch: fix-sync-failed
         src_path: /.
         dst_path: /backup/
