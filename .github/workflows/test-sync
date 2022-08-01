@@ -1,0 +1,22 @@
+name: Push File
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes files to sc_data repo
+      uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_folder: '/'
+        destination_repo: 'suttacentral/sc-data/tree/fix-sync-failed'
+        destination_folder: 'test-dir'
+        user_email: 'hd2935@qq.com'
+        user_name: 'ihongda'
+        commit_msg: '[GHA] Update the test files.'
