@@ -18,7 +18,8 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_folder: '/'
-        destination_repo: 'suttacentral/sc-data/tree/fix-sync-failed'
+        destination_repo: 'suttacentral/sc-data'
+        destination_branch: 'fix-sync-failed'
         destination_folder: 'test-dir'
         user_email: 'hd2935@qq.com'
         user_name: 'ihongda'
