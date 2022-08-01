@@ -13,14 +13,11 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Pushes files to sc_data repo
-      uses: datalbry/copy_folder_to_another_repo_action@1.0.0
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      uses: andstor/copycat-action@v3
       with:
-        source_folder: 'variant'
-        destination_repo: 'suttacentral/sc-data'
-        destination_branch: 'fix-sync-failed'
-        destination_folder: 'test-dir'
-        user_email: 'hd2935@qq.com'
-        user_name: 'ihongda'
-        commit_msg: '[GHA] Update the test files.'
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: /.
+        dst_path: /backup/
+        dst_owner: suttacentral
+        dst_repo_name: sc-data
+        dst_branch: fix-sync-failed
