@@ -9,7 +9,7 @@ jobs:
   sync-changed-files-to-sc-data:
     runs-on: ubuntu-latest
     steps:
-    - name: Pushes files to sc_data repo
+    - name: Sync changed files to sc-data repo
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
