@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - fix-sync-failed
-  pull_request:
-    branches:
-      - fix-sync-failed
 
 jobs:
   build:
