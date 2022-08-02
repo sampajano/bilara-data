@@ -10,14 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     name: sync-changed-files
     steps:
-      - name: Push changed files
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "Nilakkhana changed files"
-          git push origin fix-sync-failed2:fix-sync-failed2
-
       - name: Sync changed files to sc-data repo
         uses: andstor/copycat-action@v3
         with:
