@@ -1,4 +1,4 @@
-name: Push all files to sc-data
+name: Sync all changed files to sc-data
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "fix-sync-failed"
 
 jobs:
-  copy-file:
+  sync-changed-files-to-sc-data:
     runs-on: ubuntu-latest
     steps:
     - name: Pushes files to sc_data repo
