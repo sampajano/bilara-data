@@ -9,25 +9,6 @@ jobs:
   copy-file:
     runs-on: ubuntu-latest
     steps:
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-          python-version: 3.10.5
-          
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
-
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v24
-
-    - name: List all changed files
-      run: |
-        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-          echo "$file was changed"
-        done
-
     - name: Pushes files to sc_data repo
       uses: andstor/copycat-action@v3
       with:
