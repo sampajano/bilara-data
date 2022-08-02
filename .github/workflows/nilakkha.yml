@@ -3,7 +3,7 @@ name: nilakkhana
 on:
   push:
     branches:
-      - "published"
+      - "fix-sync-failed2"
 
 jobs:
   nilakkhana:
