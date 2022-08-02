@@ -1,0 +1,33 @@
+name: nilakkhana
+
+on:
+  push:
+    branches:
+      - "published"
+
+jobs:
+  nilakkhana:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout published repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.5
+
+      - name: Execute python script
+        run: |
+          python .scripts/nilakkhana.py
+
+      - name: Push changed files
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "nilakkhana transform"
+          git push origin fix-sync-failed2:fix-sync-failed2
