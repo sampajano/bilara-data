@@ -22,7 +22,7 @@ jobs:
 
       - name: Execute python script
         run: |
-          python .scripts/nilakkhana.py
+          python .nilakkhana/nilakkhana.py
 
       - name: Push changed files
         run: |
