@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          path: bilara-data-integrity/bilara-data
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -24,7 +23,6 @@ jobs:
       - name: Execute python script
         run: |
           python .nilakkhana/nilakkhana.py
-        working-directory: bilara-data-integrity/bilara-data
 
       - name: Push changed files
         run: |
@@ -33,4 +31,3 @@ jobs:
           git add .
           git commit -m "nilakkhana transform"
           git push origin fix-sync-failed2:fix-sync-failed2
-        working-directory: bilara-data-integrity/bilara-data
