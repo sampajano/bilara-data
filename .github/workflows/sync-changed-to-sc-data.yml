@@ -3,7 +3,7 @@ name: Push changed files to sc-data repo
 on:
   push:
     branches:
-      - published
+      - test-sync2
 
 jobs:
   push-changed-files-to-sc-data:
@@ -13,11 +13,11 @@ jobs:
         uses: andstor/copycat-action@v3
         with:
           personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          src_branch: published
+          src_branch: test-sync2
           src_path: /.
           dst_owner: suttacentral
           dst_repo_name: sc-data
           dst_path: /sc_bilara_data/
-          dst_branch: master
+          dst_branch: test-sync2
           clean: true
           commit_message: '[GHA] Update the bilara_data files.'
