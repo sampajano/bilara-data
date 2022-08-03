@@ -3,7 +3,7 @@ name: Nilakkhana transform all supported files
 on:
   push:
     branches:
-      - published
+      - test-sync2
 
 jobs:
   nilakkhana-transform-all-supported-files:
@@ -29,4 +29,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "[GHA] Nilakkhana transform"
-          git push origin published:published
+          git push origin test-sync2:test-sync2
